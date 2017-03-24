@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-danger">
+    <strong>@ViewData["errorName"]</strong> @ViewData["error"]
+</div>
+
+<h1>OAuth 2.0</h1>

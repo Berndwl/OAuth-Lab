@@ -1,0 +1,50 @@
+﻿@model TFiN.OAuthLab.Areas.OAuth.Models.ClientViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("RegisterClient", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Secret)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RedirectURI)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            ●●●●●●●●
+            @Html.DisplayFor(model => model.Secret)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Naam)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Website)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.RedirectURI)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Index", new { id= 1 }) |
+        </td>
+    </tr>
+
+
+</table>

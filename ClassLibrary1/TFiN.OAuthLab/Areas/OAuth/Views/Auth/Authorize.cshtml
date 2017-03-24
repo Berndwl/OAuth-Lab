@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Authorize";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+﻿@model TFiN.OAuthLab.Areas.OAuth.Models.AutorisatieRequestViewModel
+
+<h1>@Model.Client.Naam wil toegang tot de volgende gegevens van uw Findesk account:</h1>
+
+@using (Html.BeginForm("AuthorizationResult", "Auth", FormMethod.Post))
+{
+
+<ul class="list-group">
+    @for (var i = 0; i < Model.Scopes.Count; i++)
+    {
+        @Html.HiddenFor(model => model.Scopes[i])
+        <li class="list-group-item">
+            @Html.DisplayFor(x => x.ScopeBeschrijvingen[i])
+        </li>
+
+    }
+</ul>
+
+
+    @Html.HiddenFor(m => m.Client.Id)
+    @Html.HiddenFor(m => m.RedirectURI)
+    @Html.HiddenFor(m => m.State)
+    <button type="submit" name="authorizationResult" value="success" class="btn btn-success">Accepteer</button>
+    <button type="submit" name="authorizationResult" value="cancel" class="btn btn-danger">Annuleer</button>
+}
+
