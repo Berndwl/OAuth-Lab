@@ -1,2 +1,0 @@
-# OAuth-Lab
-OAuth Labopstelling
